@@ -26,12 +26,12 @@ switch ($oper) {
     case "*":
         $multi = 0.0;
         $multi =  $var_a * $var_b;
-        echo 'La resta de las variables es: '+$multi;
+        echo 'La multiplicacion de las variables es: '+$multi;
         break;
     case "/":
         $divi = 0.0;
         $divi =  $var_a / $var_b;
-        echo 'La resta de las variables es: '+$divi;
+        echo 'La division de las variables es: '+$divi;
         break;
 
     default:
