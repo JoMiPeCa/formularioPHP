@@ -13,7 +13,15 @@ and open the template in the editor.
 
         <form action="calculoAlgo.php" method="POST">
             Valor A:<br>
-            <input type="text" name="val_a"><br>
+            <input type="text" name="val_a"><br><br>
+
+            <select name="operacionDDL">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select><br><br>
+
             Valor B:<br>
             <input type="text" name="val_b">
 
