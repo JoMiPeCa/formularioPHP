@@ -1,42 +1,43 @@
 <?php
 
+require 'funciones.php';
+
 /*
 var_dump($_POST);
 */
+
+/* VALIDACIÓN DEL ENVÍO DEL INPUT*/
+if ((!isset($_POST["val_a"])) || (!isset($_POST["val_a"]))){
+    exit("No fue recibida la variable A o B");
+}
+/*VALIDACIÓN DEL ENVÍO DE VALORES*/
+if (($_POST["val_a"])=="" || ($_POST["val_a"])==""){
+        exit("No fue recibida la variable A o B");
+}
 $var_a = $_POST["val_a"];
 $var_b = $_POST["val_b"];
 $oper = $_POST["operacionDDL"];
 /*
 echo $_POST["val_a"];
-echo $_POST["operacionDDL"];
 echo $_POST["val_b"];
+echo $_POST["operacionDDL"];
 */
+
 switch ($oper) {
-    case "+":
-        $suma=0.0;
-        $suma = $var_a + $var_b;
-        echo 'La suma de las variables es: '+$suma;
-
+    case "+": $resultado= sumar($var_a, $var_b);
         break;
-    case "-":
-        $resta = 0.0;
-        $resta =  $var_a - $var_b;
-        echo 'La resta de las variables es: '+$resta;
+    case "-": $resultado= restar($var_a, $var_b);
         break;
-    case "*":
-        $multi = 0.0;
-        $multi =  $var_a * $var_b;
-        echo 'La resta de las variables es: '+$multi;
+    case "*": $resultado= multiplicar($var_a, $var_b);
         break;
-    case "/":
-        $divi = 0.0;
-        $divi =  $var_a / $var_b;
-        echo 'La resta de las variables es: '+$divi;
+    case "/": $resultado= dividir($var_a, $var_b);
         break;
-
     default:
+        echo 'Simbolo desconocido';
         break;
 }
+
+echo "El resultado es $resultado";
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
